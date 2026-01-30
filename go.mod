@@ -3,15 +3,15 @@ module github.com/FrameworkOSS/feature_stdlib
 go 1.25.4
 
 require (
-	github.com/FrameworkOSS/event v0.0.0-20260130023243-bbe3b6e71056
-	github.com/FrameworkOSS/feature v0.0.0-20260130023700-786c1ee0a1ef
-	github.com/FrameworkOSS/feature_commands v0.0.0-20260130024452-052c78256839
-	github.com/FrameworkOSS/feature_debugger v0.0.0-20260130024619-373c0e169114
-	github.com/FrameworkOSS/feature_files v0.0.0-20260130024606-787205035d0d
-	github.com/FrameworkOSS/feature_hellodolly v0.0.0-20260130024634-425f1e6d6dd8
-	github.com/FrameworkOSS/feature_shell v0.0.0-20260130024730-67ffba16ac9b
-	github.com/FrameworkOSS/feature_wires v0.0.0-20260130024520-038048c88f6d
-	github.com/FrameworkOSS/portal v0.0.0-20260130024332-0ad23743c372
+	github.com/FrameworkOSS/event v0.0.0-20260130025636-4bd18cbcf4e7
+	github.com/FrameworkOSS/feature v0.0.0-20260130030150-290814e4405c
+	github.com/FrameworkOSS/feature_commands v0.0.0-20260130030137-d746cde1f5c5
+	github.com/FrameworkOSS/feature_debugger v0.0.0-20260130030221-e6cd2a71f036
+	github.com/FrameworkOSS/feature_files v0.0.0-20260130030300-ab21aab45c5c
+	github.com/FrameworkOSS/feature_hellodolly v0.0.0-20260130030326-2110e71a6e24
+	github.com/FrameworkOSS/feature_shell v0.0.0-20260130030416-2ebf7bd58778
+	github.com/FrameworkOSS/feature_wires v0.0.0-20260130030430-bb17c84ca0c6
+	github.com/FrameworkOSS/portal v0.0.0-20260130024933-862bbe3a3b0f
 )
 
 require (
