@@ -1,6 +1,7 @@
 package stdlib
 
 import (
+	"strings"
 	"sync"
 
 	"github.com/FrameworkOSS/event"
@@ -10,6 +11,7 @@ import (
 	files "github.com/FrameworkOSS/feature_files"
 	hellodolly "github.com/FrameworkOSS/feature_hellodolly"
 	shell "github.com/FrameworkOSS/feature_shell"
+	"github.com/FrameworkOSS/feature_stdlib/metadata"
 	wires "github.com/FrameworkOSS/feature_wires"
 	"github.com/FrameworkOSS/portal"
 )
@@ -71,27 +73,27 @@ func NewStdlib(p *portal.Portal, c, s, d bool) *Stdlib {
 }
 
 func (f *Stdlib) API() int {
-	return 0
+	return metadata.API
 }
 
 func (f *Stdlib) ID() string {
-	return "portal-stdlib"
+	return metadata.ID
 }
 
 func (f *Stdlib) Name() string {
-	return "Portal Standard Features Library"
+	return metadata.Name
 }
 
 func (f *Stdlib) Authors() []string {
-	return []string{"JoshuaDoes"}
+	return strings.Split(metadata.Authors, ",")
 }
 
 func (f *Stdlib) Description() string {
-	return "Transparently loads missing standard portal features if none replace them."
+	return metadata.Description
 }
 
 func (f *Stdlib) Version() string {
-	return "v0.0.1"
+	return metadata.Version
 }
 
 func (f *Stdlib) Open() error {
