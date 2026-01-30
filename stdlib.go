@@ -3,16 +3,18 @@ package stdlib
 import (
 	"sync"
 
-	"github.com/FrameworkOSS/portal/features/commands"
-	"github.com/FrameworkOSS/portal/features/debugger"
-	"github.com/FrameworkOSS/portal/features/files"
-	"github.com/FrameworkOSS/portal/features/hellodolly"
-	"github.com/FrameworkOSS/portal/features/shell"
-	"github.com/FrameworkOSS/portal/features/wires"
-	"github.com/FrameworkOSS/portal/portal"
+	"github.com/FrameworkOSS/event"
+	"github.com/FrameworkOSS/feature"
+	commands "github.com/FrameworkOSS/feature_commands"
+	debugger "github.com/FrameworkOSS/feature_debugger"
+	files "github.com/FrameworkOSS/feature_files"
+	hellodolly "github.com/FrameworkOSS/feature_hellodolly"
+	shell "github.com/FrameworkOSS/feature_shell"
+	wires "github.com/FrameworkOSS/feature_wires"
+	"github.com/FrameworkOSS/portal"
 )
 
-var features = []portal.Feature{
+var features = []feature.Feature{
 	hellodolly.NewHelloDolly(),
 	files.NewFiles(),
 	wires.NewWires(),
@@ -33,7 +35,7 @@ type Stdlib struct {
 	c, s, d bool
 
 	lockResp sync.Mutex
-	resps    []*portal.Event
+	resps    []*event.Event
 }
 
 func NewStdlib(p *portal.Portal, c, s, d bool) *Stdlib {
@@ -93,7 +95,7 @@ func (f *Stdlib) Version() string {
 }
 
 func (f *Stdlib) Open() error {
-	f.storeResp(portal.NewEventReady(f.ID(), true))
+	f.storeResp(event.NewEventReady(f.ID(), true))
 	return nil
 }
 
@@ -102,21 +104,21 @@ func (f *Stdlib) Close() (errs []error, retry bool) {
 	return
 }
 
-func (f *Stdlib) Input(_ *portal.Event) error {
+func (f *Stdlib) Input(_ *event.Event) error {
 	return nil
 }
 
-func (f *Stdlib) Output() (*portal.Event, error) {
+func (f *Stdlib) Output() (*event.Event, error) {
 	return f.readResp(), nil
 }
 
-func (f *Stdlib) storeResp(e *portal.Event) {
+func (f *Stdlib) storeResp(e *event.Event) {
 	f.lockResp.Lock()
 	f.resps = append(f.resps, e)
 	f.lockResp.Unlock()
 }
 
-func (f *Stdlib) readResp() (e *portal.Event) {
+func (f *Stdlib) readResp() (e *event.Event) {
 	if len(f.resps) > 0 {
 		f.lockResp.Lock()
 		e = f.resps[0]
