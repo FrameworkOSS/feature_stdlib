@@ -5,13 +5,13 @@ go 1.25.4
 require (
 	github.com/FrameworkOSS/event v0.0.0-20260130023243-bbe3b6e71056
 	github.com/FrameworkOSS/feature v0.0.0-20260130023700-786c1ee0a1ef
-	github.com/FrameworkOSS/feature_commands v0.0.0-20260130023843-1fe40cd0e484
-	github.com/FrameworkOSS/feature_debugger v0.0.0-20260130023936-ed72f329358e
-	github.com/FrameworkOSS/feature_files v0.0.0-20260130024043-d33e2f1b044f
-	github.com/FrameworkOSS/feature_hellodolly v0.0.0-20260130024101-cbbb5fbf8804
-	github.com/FrameworkOSS/feature_shell v0.0.0-20260130024120-a91b33c93e74
-	github.com/FrameworkOSS/feature_wires v0.0.0-20260130024210-bbc16847e056
-	github.com/FrameworkOSS/portal v0.0.0-20260130021313-da6aa7535101
+	github.com/FrameworkOSS/feature_commands v0.0.0-20260130024452-052c78256839
+	github.com/FrameworkOSS/feature_debugger v0.0.0-20260130024619-373c0e169114
+	github.com/FrameworkOSS/feature_files v0.0.0-20260130024606-787205035d0d
+	github.com/FrameworkOSS/feature_hellodolly v0.0.0-20260130024634-425f1e6d6dd8
+	github.com/FrameworkOSS/feature_shell v0.0.0-20260130024730-67ffba16ac9b
+	github.com/FrameworkOSS/feature_wires v0.0.0-20260130024520-038048c88f6d
+	github.com/FrameworkOSS/portal v0.0.0-20260130024332-0ad23743c372
 )
 
 require (
